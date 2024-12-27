@@ -1,12 +1,11 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace Read_Only_folder_creator
+namespace KreatorRezerwowanychFolderow
 {
     internal class Program
     {
@@ -38,7 +37,8 @@ namespace Read_Only_folder_creator
                 case 1: string invalidFolderPath = $@"\\?\{Path.Combine(path, "CON")}"; Directory.CreateDirectory(invalidFolderPath); break;
                 case 2: invalidFolderPath = $@"\\?\{Path.Combine(path, "PRN")}"; Directory.CreateDirectory(invalidFolderPath); break;
                 case 3: invalidFolderPath = $@"\\?\{Path.Combine(path, "AUX")}"; Directory.CreateDirectory(invalidFolderPath); break;
-                case 4: Console.WriteLine("Podaj nazwę folderu do stworzenia: \n1) COM0 \n2) COM1 \n3) COM2 \n4) COM3 \n5) COM4\n6) COM5 \n7) COM6 \n8) COM7 \n9) COM8 \n10) COM9 \n11) COM¹\n12) COM²\n13) COM³");
+                case 4:
+                    Console.WriteLine("Podaj nazwę folderu do stworzenia: \n1) COM0 \n2) COM1 \n3) COM2 \n4) COM3 \n5) COM4\n6) COM5 \n7) COM6 \n8) COM7 \n9) COM8 \n10) COM9 \n11) COM¹\n12) COM²\n13) COM³");
                     choice = int.Parse(Console.ReadLine());
                     Console.Clear();
                     switch (choice)
@@ -85,13 +85,6 @@ namespace Read_Only_folder_creator
             }
 
             Console.ReadKey();
-
-
-
-
-
-
-
         }
     }
 }
